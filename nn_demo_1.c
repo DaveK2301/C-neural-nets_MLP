@@ -118,11 +118,11 @@ int main(int argc, char *argv[])
     //initialize the extra weights arrays
     //for the momentum term
     
-    //allocateDeltas(&NNparams);
+    allocateDeltas(&NNparams);
     
     //set momentum
     
-    //NNparams.alpha = 0.1;
+    NNparams.alpha = 0.1;
     
     
     // **************************************************
