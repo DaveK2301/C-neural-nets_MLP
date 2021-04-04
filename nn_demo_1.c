@@ -5,7 +5,7 @@
  * The basic functions AND, OR, and XOR can be tested
  * by uncommenting various sections and simple datasets.
  * 
- * Copyright 2016-2017 David Kaplan 
+ * Copyright 2016-2021 David Kaplan 
  */
 
 

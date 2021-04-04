@@ -1,3 +1,6 @@
+#ifndef NN_UTILS_H
+#define NN_UTILS_H
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -13,7 +16,7 @@
  * The basic functions AND, OR, and XOR can be tested
  * by uncommenting various sections and simple datasets.
  * 
- * Copyright 2016-2017 David Kaplan 
+ * Copyright 2016-2021 David Kaplan 
  */
 
 typedef struct NN_params NN_parameters;
@@ -66,3 +69,5 @@ double ** loadNN(NN_parameters *np,
             char *param_path, char *weight_path, int load_weights);
 int ms_diff(struct timespec start, struct timespec stop);
 void destroyDataSet(NN_data_set *nn);
+
+#endif
