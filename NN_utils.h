@@ -23,8 +23,8 @@ struct NN_params {
     int num_outputs;
     double Eta;  //the learning rate
     double alpha; //the momentum
-    int *num_units_in_layer;
     double ***layer_weight_matrices;
+    int* num_units_in_layer;
     double ***layer_weight_deltas;
 };
 
@@ -60,7 +60,6 @@ double **allocateNN(NN_parameters *np);
 int allocateWeights(NN_parameters *np);
 double **createNeuralNet(NN_parameters *np);
 int allocateDeltas(NN_parameters *np );
-double **createNeuralNet(NN_parameters *np);
 int saveWeights(NN_parameters *np, char *path);
 int saveParams(NN_parameters *np, char *params_path, char *weights_path, int save_weights);
 double ** loadNN(NN_parameters *np, 

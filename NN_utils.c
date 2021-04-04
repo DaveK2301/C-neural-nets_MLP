@@ -157,6 +157,8 @@ double **createNeuralNet(NN_parameters *np) {
     NN = allocateNN(np);
     if (NN == NULL)
         return NULL;
+    np->layer_weight_deltas =
+        malloc((np->num_layers) * sizeof(double**));
     if(allocateWeights(np) == 0) {
         return NN;
     } else {
