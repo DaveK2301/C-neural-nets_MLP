@@ -6,3 +6,6 @@ The demo executable shows the creation of the neural net and dataset structures 
 The OpenMP functions were used to test parallelization performance gains.
 
 This is purely intended as a code sample for prospective employers or partners at this time.
+
+Neural Nets running native in Unreal Engine test project learning the XOR function (same as the XOR demo data set in nn_demo_1.c):
+![C_NeuralNetsInUnrealActorInWorld](https://user-images.githubusercontent.com/16049374/115104011-b62fb000-9f0a-11eb-9d9d-dd60fb3bb850.png)
