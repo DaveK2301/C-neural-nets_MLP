@@ -7,5 +7,5 @@ The OpenMP functions were used to test parallelization performance gains.
 
 This is purely intended as a code sample for prospective employers or partners at this time.
 
-Neural Nets running native in Unreal Engine test project learning the XOR function (same as the XOR demo data set in nn_demo_1.c):
+Neural Nets running in Unreal Engine learning the XOR function using same tiny XOR demo data set and learning parameters as found in nn_demo_1.c Epochs seem high because there are only 4 samples in the data set, but the RMSE does get extremely small:
 ![C_NeuralNetsInUnrealActorInWorld](https://user-images.githubusercontent.com/16049374/115104011-b62fb000-9f0a-11eb-9d9d-dd60fb3bb850.png)
