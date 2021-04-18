@@ -1,3 +1,5 @@
+// Copyright 2016 - 2021 David Kaplan
+
 /*
  * Simple demonstration code for multi-layer perceptron
  * code. This code was written for UW MSCC TCSS 570
@@ -5,13 +7,11 @@
  * The basic functions AND, OR, and XOR can be tested
  * by uncommenting various sections and simple datasets.
  * 
- * Copyright 2016-2021 David Kaplan 
  */
 
 
 #include <stdio.h>
 #include <math.h>
-//#include "NN_utils.h"
 #include "NN_functions.h"
 
 int main(int argc, char *argv[])

@@ -1,3 +1,5 @@
+// Copyright 2016 - 2021 David Kaplan
+
 #ifndef NN_FUNCTIONS_H
 #define NN_FUNCTIONS_H
 
@@ -17,8 +19,7 @@ extern “C”{
  * Parallel Computing, Summer 2016, as test code for parallelization.
  * The basic functions AND, OR, and XOR can be tested
  * by uncommenting various sections and simple datasets.
- * 
- * Copyright 2016-2021 David Kaplan 
+ *  
  */
 
 void feed_forward(NN_parameters *np, double **neural_net, 

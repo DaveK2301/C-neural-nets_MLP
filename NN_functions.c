@@ -1,3 +1,5 @@
+// Copyright 2016 - 2021 David Kaplan
+
 #include "NN_functions.h"
 
 /*
@@ -8,8 +10,6 @@
  * Parallel Computing, Summer 2016, as test code for parallelization.
  * The basic functions AND, OR, and XOR can be tested
  * by uncommenting various sections and simple datasets.
- * 
- * Copyright 2016-2021 David Kaplan 
  */ 
 
 

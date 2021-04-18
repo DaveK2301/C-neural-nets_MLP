@@ -1,3 +1,5 @@
+// Copyright 2016 - 2021 David Kaplan
+
 #include "NN_utils.h"
 
 /*

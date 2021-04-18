@@ -320,11 +320,6 @@ int createDataSet(NN_data_set *nn) {
 }
 
 
-void destroyDataSet(NN_data_set *nn) {
-    free(nn->data[0]);
-    free(nn->data);
-}
-
 NN_data_set createDataSetFromCSV(char * path, int num_inputs, int num_outputs,
 					int num_examples) {
     // if DAT.data == NULL, something went wrong
@@ -347,4 +342,9 @@ NN_data_set createDataSetFromCSV(char * path, int num_inputs, int num_outputs,
     printf("Error loading or creating data set!");
     DAT.data = NULL;
     return DAT;
+}
+
+void destroyDataSet(NN_data_set* nn) {
+    free(nn->data[0]);
+    free(nn->data);
 }

@@ -1,3 +1,5 @@
+// Copyright 2016 - 2021 David Kaplan
+
 #ifndef NN_UTILS_H
 #define NN_UTILS_H
 
@@ -20,7 +22,6 @@ extern “C”{
  * The basic functions AND, OR, and XOR can be tested
  * by uncommenting various sections and simple datasets.
  * 
- * Copyright 2016-2021 David Kaplan 
  */
 
 typedef struct NN_params NN_parameters;
@@ -137,6 +138,7 @@ int createDataSet(NN_data_set* nn);
  */
 NN_data_set createDataSetFromCSV(char* path, int num_inputs,
     int num_outputs, int num_examples);
+void destroyDataSet(NN_data_set* nn);
 
 /*****************************************************************************/
 // compact matrix utilities
