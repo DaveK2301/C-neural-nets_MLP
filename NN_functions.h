@@ -5,6 +5,10 @@
 #include <omp.h>
 #include "NN_utils.h"
 
+#ifdef __cplusplus
+extern “C”{
+#endif
+
 /*
  * Multi-layer perceptron code. Based on pseudo-code
  * found on page 98-100 of "Machine Learning" by Tom M. Mitchell.
@@ -41,6 +45,10 @@ void updateWeights_momentumOMP1(NN_parameters *np, double **NN,
 
 void updateWeights_momentumOMP2(NN_parameters *np, double **NN, 
                     double **errorMatrix, NN_data_set *dataset, int data_example, int num_threads);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
 

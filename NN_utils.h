@@ -7,6 +7,10 @@
 #include <time.h>
 #include <math.h>
 
+#ifdef __cplusplus
+extern “C”{
+#endif
+
 /*
  * Multi-layer perceptron code. Based on pseudo-code
  * found on page 98-100 of "Machine Learning" by Tom M. Mitchell.
@@ -141,5 +145,9 @@ NN_data_set createDataSetFromCSV(char* path, int num_inputs,
  * Caller must check for NULL
  */
 double** allocateMatrix(int rows, int cols);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
