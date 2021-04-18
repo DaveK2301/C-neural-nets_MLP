@@ -16,7 +16,6 @@
 
 int main(int argc, char *argv[])
 {
-    //struct timespec start, stop;
     
 	/*if (argc != 1) {
     	printf("Usage: ");
@@ -28,7 +27,6 @@ int main(int argc, char *argv[])
     DAT.num_outputs = 1;
     createDataSet(&DAT);
     
-    //struct timespec start, stop;
     //clock_gettime(CLOCK_REALTIME, &start);    
     //Stop tracking execution time.
     //clock_gettime(CLOCK_REALTIME, &stop);
@@ -143,7 +141,7 @@ int main(int argc, char *argv[])
             printf("%d, %2.10f\n", i, rmse);
     }
     //clock_gettime(CLOCK_REALTIME, &stop);
-    //printf("Total time elapsed %d\n", ms_diff(start, stop));
+
     //printf("layer weights matrices after run:\n");
     //printWeights(&NNparams);
              
