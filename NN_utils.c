@@ -196,7 +196,7 @@ double** loadNN(NN_parameters* np,
         printf("loadNN error opening param file!\n");
         return NN;
     }
-    //int num_inputs, num_outputs, num_layers;
+
     fscanf(fp, "%d", &np->num_inputs);
     fscanf(fp, "%d", &np->num_outputs);
     fscanf(fp, "%d", &np->num_layers);
@@ -216,6 +216,7 @@ double** loadNN(NN_parameters* np,
     allocateWeights(np);
     fclose(fp);
     printf("got here");
+
     //load the weights
     FILE* fw = fopen(weight_path, "r");
     for (int n = 0; n < np->num_units_in_layer[0]; n++) {
@@ -233,7 +234,6 @@ double** loadNN(NN_parameters* np,
     }
     fclose(fw);
     return NN;
-
 }
 
 /*****************************************************************************/
