@@ -13,17 +13,6 @@
 extern “C”{
 #endif
 
-/*
- * Multi-layer perceptron code. Based on pseudo-code
- * found on page 98-100 of "Machine Learning" by Tom M. Mitchell.
- * Uses a sigmoid transfer for now.
- * This code was written for UW MSCC TCSS 570
- * Parallel Computing, Summer 2016, as test code for parallelization.
- * The basic functions AND, OR, and XOR can be tested
- * by uncommenting various sections and simple datasets.
- * 
- */
-
 typedef struct NN_params NN_parameters;
 struct NN_params {
     int num_layers;
@@ -75,6 +64,7 @@ double** createNeuralNet(NN_parameters* np);
   * Caller must check for NULL return.
   */
 double **allocateNN(NN_parameters *np);
+
 /*
  * Allocates the various rectangular
  * matrices (or vectors for single neuron layers)
@@ -83,6 +73,7 @@ double **allocateNN(NN_parameters *np);
  * Returns 0 if allocation is succesful, 1 otherwise.
  */
 int allocateWeights(NN_parameters *np);
+
 /*
  * This creates the parallel matrices to the
  * neural net matrices
@@ -90,16 +81,16 @@ int allocateWeights(NN_parameters *np);
  * momentum.
  */
 int allocateDeltas(NN_parameters *np );
+
 void clearNeuralNet(NN_parameters* np, double** NN);
 
 /*****************************************************************************/
 // Neural Net storage
+// Loading and saving NN's, weights and parameters
+// very lightly tested!
 
-/*
- * Loading and saving NN's, weights and parameters
- * very lightly tested!
- */
 int saveWeights(NN_parameters* np, char* path);
+
 int saveParams(NN_parameters* np, char* params_path, char* weights_path, int save_weights);
 
 /*
@@ -110,6 +101,7 @@ int saveParams(NN_parameters* np, char* params_path, char* weights_path, int sav
 double** loadNN(NN_parameters* np,
     char* param_path, char* weight_path, int load_weights);
 
+/*****************************************************************************/
 // IO utilities
 void print_matrix(double** A, int m, int n);
 void printNeuralNet(NN_parameters* np, double** NN);
@@ -131,6 +123,7 @@ NN_data_set createRandomDataSet(int num_examples, int num_inputs,
  * Returns 0 if succesfull, 1 otherwise.
  */
 int createDataSet(NN_data_set* nn);
+
 /*
  * This will not work if the file contains a
  * header row (TODO).
@@ -138,6 +131,7 @@ int createDataSet(NN_data_set* nn);
  */
 NN_data_set createDataSetFromCSV(char* path, int num_inputs,
     int num_outputs, int num_examples);
+
 void destroyDataSet(NN_data_set* nn);
 
 /*****************************************************************************/

@@ -11,20 +11,25 @@
 extern “C”{
 #endif
 
-/*
- * Multi-layer perceptron code. Based on pseudo-code
- * found on page 98-100 of "Machine Learning" by Tom M. Mitchell.
- * Uses a sigmoid transfer for now.
- * This code was written for UW MSCC TCSS 570
- * Parallel Computing, Summer 2016, as test code for parallelization.
- * The basic functions AND, OR, and XOR can be tested
- * by uncommenting various sections and simple datasets.
- *  
- */
-
+ /*
+  * Starting at the first layer past the input nodes,
+  * applies the weights to the nodes in the layer above
+  * and sets the output value of each node, layer by layer,
+  * until the output layer has its value updated.
+  * This version uses the sigmoid (logistic) function
+  * for thresholding the outputs.
+  */
 void feed_forward(NN_parameters *np, double **neural_net, 
                                 NN_data_set *dataset, int example);
 
+/*
+ * Back propagate the errors from the outputs to all perceptrons
+ * in the network.
+ * Returns the sum of the squared errors for all the outputs,
+ * on this training example
+ * Expects an error matrix of the exact same format
+ * as the neural network.
+ */
 double backPropagateError(NN_parameters *np, double **NN, 
                         double **errorMatrix, int example_num,
                         NN_data_set *dataset);
