@@ -22,23 +22,6 @@ double** createNeuralNet(NN_parameters* np) {
     }
 }
 
-double **allocateMatrix(int rows, int cols) {
-	double ** A;
-    int r_index=0;
-    A = (double **)malloc(sizeof(double *) * rows);
-    if (A == NULL)
-        return NULL;
-    double * rowptr = A[0] = (double *)malloc(sizeof(double) * rows * cols);
-    if (A[0] == NULL)
-        return NULL;
-        
-    while (r_index < rows) {
-		A[r_index++] = rowptr;
-		rowptr += cols;
-	}
-    return A;
-}
-
 double **allocateNN(NN_parameters *np) {
     double **NN;
     int total_entries = 0;
@@ -347,4 +330,24 @@ NN_data_set createDataSetFromCSV(char * path, int num_inputs, int num_outputs,
 void destroyDataSet(NN_data_set* nn) {
     free(nn->data[0]);
     free(nn->data);
+}
+
+/*****************************************************************************/
+// compact matrix utilities
+
+double** allocateMatrix(int rows, int cols) {
+    double** A;
+    int r_index = 0;
+    A = (double**)malloc(sizeof(double*) * rows);
+    if (A == NULL)
+        return NULL;
+    double* rowptr = A[0] = (double*)malloc(sizeof(double) * rows * cols);
+    if (A[0] == NULL)
+        return NULL;
+
+    while (r_index < rows) {
+        A[r_index++] = rowptr;
+        rowptr += cols;
+    }
+    return A;
 }
